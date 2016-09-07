@@ -594,7 +594,7 @@ GemmMetod<T>::run()
         this->size, this->qnum, this->queues, this->inEventCount,
         this->inEvent, this->outEvent);
 }
-
+/*
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename T>
 class TrmmMetod  : public baseMetod<T>
@@ -693,6 +693,7 @@ TrsmMetod<T>::run()
         this->size, this->bufB, 0, this->size, this->qnum, this->queues,
         this->inEventCount, this->inEvent, this->outEvent);
 }
+*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename T>
 class GemvMetod : public baseMetod<T>
@@ -792,7 +793,7 @@ SymvMetod<T>::run()
             this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
-
+/*
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename T>
 class Syr2kMetod : public baseMetod<T>
@@ -839,7 +840,7 @@ Syr2kMetod<T>::run()
         this->size, this->qnum, this->queues,
         this->inEventCount, this->inEvent, this->outEvent);
 }
-
+*/
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename T>
@@ -922,8 +923,8 @@ TrmvMetod<T>::run()
 	type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
 																( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
- 	return (cl_int)::clMath::clblas::trmv(type, this->order, uplo, transA, diagA, this->size, this->bufA, 0, this->size, this->bufX,
-						0, 1, this->bufY/* as Xcopy */, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+  // return (cl_int)::clMath::clblas::trmv(type, this->order, uplo, transA, diagA, this->size, this->bufA, 0, this->size, this->bufX,
+  //					0, 1, this->bufY/* as Xcopy */, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1005,8 +1006,8 @@ TrsvMetod<T>::run()
                                                                 ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
 
-        return (cl_int)::clMath::clblas::trsv(type, this->order, uplo, transA, diagA, this->size, this->bufA, 0, this->size, this->bufX,
-                                                0, 1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//        return (cl_int)::clMath::clblas::trsv(type, this->order, uplo, transA, diagA, this->size, this->bufA, 0, this->size, this->bufX,
+//                                                0, 1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1061,8 +1062,8 @@ TpsvMetod<T>::run()
                                                                 ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
 
-        return (cl_int)::clMath::clblas::tpsv(type, this->order, uplo, transA, diagA, this->size, this->bufA, 0, this->bufX,
-                                                0, 1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//        return (cl_int)::clMath::clblas::tpsv(type, this->order, uplo, transA, diagA, this->size, this->bufA, 0, this->bufX,
+//                                                0, 1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1145,9 +1146,9 @@ template <typename T> cl_int
 SymmMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::symm(this->order, side, uplo, this->size, this->size, this->alpha, this->bufA, 0, this->size,
-											this->bufB, 0, this->size, this->beta, this->bufC, 0, this->size,
-                        					this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::symm(this->order, side, uplo, this->size, this->size, this->alpha, this->bufA, 0, this->size,
+//											this->bufB, 0, this->size, this->beta, this->bufC, 0, this->size,
+//                        					this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1204,9 +1205,9 @@ template <typename T> cl_int
 SyrMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::syr(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1,
-										 this->bufA, 0, this->size, this->qnum, this->queues,
-										 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::syr(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1,
+//										 this->bufA, 0, this->size, this->qnum, this->queues,
+//										 this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1248,9 +1249,9 @@ template <typename T> cl_int
 Syr2Metod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::syr2(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
-										 this->bufA, 0, this->size, this->qnum, this->queues,
-										 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::syr2(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
+//										 this->bufA, 0, this->size, this->qnum, this->queues,
+//										 this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1325,9 +1326,9 @@ template <typename T> cl_int
 GerMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::ger(this->order, this->size, this->size, this->alpha,
-						this->bufX, 0, 1, this->bufY, 0, 1, this->bufA, 0, this->size,
-						this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::ger(this->order, this->size, this->size, this->alpha,
+//						this->bufX, 0, 1, this->bufY, 0, 1, this->bufA, 0, this->size,
+//						this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1383,9 +1384,9 @@ template <typename T> cl_int
 GercMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::gerc(this->order, this->size, this->size, this->alpha,
-						this->bufX, 0, 1, this->bufY, 0, 1, this->bufA, 0, this->size,
-						this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::gerc(this->order, this->size, this->size, this->alpha,
+//						this->bufX, 0, 1, this->bufY, 0, 1, this->bufA, 0, this->size,
+//						this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1431,9 +1432,9 @@ template <typename T> cl_int
 HerMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::her(this->order, this->uplo, this->size, CREAL(this->alpha), this->bufX, 0, 1,
-                                                                                 this->bufA, 0, this->size, this->qnum, this->queues,
-                                                                                 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::her(this->order, this->uplo, this->size, CREAL(this->alpha), this->bufX, 0, 1,
+//                                                                                 this->bufA, 0, this->size, this->qnum, this->queues,
+//                                                                                 this->inEventCount, this->inEvent, this->outEvent);
 }
 
 
@@ -1476,9 +1477,9 @@ template <typename T> cl_int
 Her2Metod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::her2(this->order, this->uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
-                                                                                 this->bufA, 0, this->size, this->qnum, this->queues,
-                                                                                 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::her2(this->order, this->uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
+//                                                                                this->bufA, 0, this->size, this->qnum, this->queues,
+//                                                                                 this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1541,9 +1542,9 @@ template <typename T> cl_int
 HemmMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::hemm(this->order, side, uplo, this->size, this->size, this->alpha, this->bufA, 0, this->size,
-                                                                                        this->bufB, 0, this->size, this->beta, this->bufC, 0, this->size,
-                                                                this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::hemm(this->order, side, uplo, this->size, this->size, this->alpha, this->bufA, 0, this->size,
+//                                                                                       this->bufB, 0, this->size, this->beta, this->bufC, 0, this->size,
+//                                                                this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1583,9 +1584,9 @@ template <typename T> cl_int
 HemvMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::hemv(this->order, uplo, this->size, this->alpha, this->bufA, 0, this->size,
-                                                   this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
-                                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::hemv(this->order, uplo, this->size, this->alpha, this->bufA, 0, this->size,
+//                                                   this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
+//                                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 }
 /////////////////////////////////////////////////////
@@ -1632,9 +1633,9 @@ template <typename T> cl_int
 HerkMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::herk(this->order, uplo, transA, this->size, this->size, CREAL(this->alpha), this->bufA, 0, this->size,
-                                                                                         CREAL(this->beta), this->bufC, 0, this->size,
-                                                                this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::herk(this->order, uplo, transA, this->size, this->size, CREAL(this->alpha), this->bufA, 0, this->size,
+//                                                                                         CREAL(this->beta), this->bufC, 0, this->size,
+//                                                                this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1702,8 +1703,8 @@ TpmvMetod<T>::run()
     type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                                 ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)::clMath::clblas::tpmv(type, this->order, uplo, trans, diag, this->size, this->bufAP, 0, this->bufX,
-                        0, 1, this->bufY/* as Xcopy */, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::tpmv(type, this->order, uplo, trans, diag, this->size, this->bufAP, 0, this->bufX,
+//                        0, 1, this->bufY/* as Xcopy */, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1741,9 +1742,9 @@ template <typename T> cl_int
 SpmvMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::spmv(this->order, uplo, this->size, this->alpha, this->bufAP, 0,
-                                                   this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
-                                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::spmv(this->order, uplo, this->size, this->alpha, this->bufAP, 0,
+//                                                   this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
+//                                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 }
 
@@ -1781,9 +1782,9 @@ template <typename T> cl_int
 HpmvMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::hpmv(this->order, uplo, this->size, this->alpha, this->bufAP, 0,
-                                                   this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
-                                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::hpmv(this->order, uplo, this->size, this->alpha, this->bufAP, 0,
+//                                                  this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
+//                                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 }
 
@@ -1825,9 +1826,9 @@ template <typename T> cl_int
 SprMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::spr(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1,
-                                         this->bufAP, 0, this->qnum, this->queues,
-                                         this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::spr(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1,
+//                                         this->bufAP, 0, this->qnum, this->queues,
+//                                         this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1867,9 +1868,9 @@ template <typename T> cl_int
 HprMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::hpr(this->order, this->uplo, this->size, CREAL(this->alpha), this->bufX, 0, 1,
-                                                                                 this->bufAP, 0, this->qnum, this->queues,
-                                                                                 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::hpr(this->order, this->uplo, this->size, CREAL(this->alpha), this->bufX, 0, 1,
+//                                                                                 this->bufAP, 0, this->qnum, this->queues,
+//                                                                                 this->inEventCount, this->inEvent, this->outEvent);
 }
 
 
@@ -1912,9 +1913,9 @@ template <typename T> cl_int
 Hpr2Metod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::hpr2(this->order, this->uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
-                                                                                 this->bufAP, 0, this->qnum, this->queues,
-                                                                                 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::hpr2(this->order, this->uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
+//                                                                                 this->bufAP, 0, this->qnum, this->queues,
+//                                                                                 this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1956,9 +1957,9 @@ template <typename T> cl_int
 Spr2Metod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::spr2(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
-										 this->bufAP, 0, this->qnum, this->queues,
-										 this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::spr2(this->order, uplo, this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
+//										 this->bufAP, 0, this->qnum, this->queues,
+//										 this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -1998,9 +1999,9 @@ GbmvMetod<T>::generateData()
 template <typename T> cl_int
 GbmvMetod<T>::run()
 {
-    return (cl_int)clMath::clblas::gbmv(this->order, this->transA, this->size, this->size, (1), (1),
-                                        this->alpha, this->bufA, 0, this->size, this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::gbmv(this->order, this->transA, this->size, this->size, (1), (1),
+//                                        this->alpha, this->bufA, 0, this->size, this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2047,9 +2048,9 @@ TbmvMetod<T>::run()
     type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                      ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::tbmv(type, this->order, this->uplo, this->transA, this->diag, this->size, (1),
-                                        this->bufA, 0, this->size, this->bufX, 0, 1, this->bufY,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::tbmv(type, this->order, this->uplo, this->transA, this->diag, this->size, (1),
+//                                        this->bufA, 0, this->size, this->bufX, 0, 1, this->bufY,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2089,9 +2090,9 @@ SbmvMetod<T>::generateData()
 template <typename T> cl_int
 SbmvMetod<T>::run()
 {
-    return (cl_int)clMath::clblas::sbmv(this->order, this->uplo, this->size, 1,
-                                        this->alpha, this->bufA, 0, this->size, this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::sbmv(this->order, this->uplo, this->size, 1,
+//                                        this->alpha, this->bufA, 0, this->size, this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2132,9 +2133,9 @@ HbmvMetod<T>::generateData()
 template <typename T> cl_int
 HbmvMetod<T>::run()
 {
-    return (cl_int)clMath::clblas::hbmv(this->order, this->uplo, this->size, 1,
-                                        this->alpha, this->bufA, 0, this->size, this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::hbmv(this->order, this->uplo, this->size, 1,
+//                                        this->alpha, this->bufA, 0, this->size, this->bufX, 0, 1, this->beta, this->bufY, 0, 1,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2177,9 +2178,9 @@ TbsvMetod<T>::run()
 
     type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                      ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
-    return (cl_int)clMath::clblas::tbsv(type, this->order, this->uplo, this->transA, this->diag, this->size, 1,
-                                        this->bufA, 0, 2, this->bufX, 0, 1,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::tbsv(type, this->order, this->uplo, this->transA, this->diag, this->size, 1,
+//                                        this->bufA, 0, 2, this->bufX, 0, 1,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 ///////////////////////////////////////////////
 
@@ -2224,9 +2225,9 @@ template <typename T> cl_int
 Her2kMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::her2k(this->order, uplo, this->transA, this->size, this->size, this->alpha,
-                                   this->bufA, 0, this->size, this->bufB, 0, this->size, CREAL(this->beta), this->bufC, 0, this->size,
-                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::her2k(this->order, uplo, this->transA, this->size, this->size, this->alpha,
+//                                   this->bufA, 0, this->size, this->bufB, 0, this->size, CREAL(this->beta), this->bufC, 0, this->size,
+//                                   this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 
 
 }
@@ -2263,8 +2264,8 @@ template <typename T> cl_int
 ScalMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::scal(false, this->size, this->alpha, this->bufX, 0,
-                        1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)::clMath::clblas::scal(false, this->size, this->alpha, this->bufX, 0,
+//                        1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -2299,8 +2300,8 @@ template <typename T> cl_int
 SscalMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::scal(true, this->size, this->alpha, this->bufX, 0,
-                        1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)::clMath::clblas::scal(true, this->size, this->alpha, this->bufX, 0,
+ //                       1, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -2343,8 +2344,8 @@ SwapMetod<T>::run()
 			( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT:
              TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)::clMath::clblas::swap(type, this->size, this->bufX, 0, 1, this->bufY, 0, 1,
-                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)::clMath::clblas::swap(type, this->size, this->bufX, 0, 1, this->bufY, 0, 1,
+ //                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2383,9 +2384,9 @@ DotMetod<T>::run()
         type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                                         ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::dot( type, this->size, this->bufA, 0,
-                                        this->bufX, 0, 1, this->bufY, 0, 1, this->bufB,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::dot( type, this->size, this->bufA, 0,
+ //                                       this->bufX, 0, 1, this->bufY, 0, 1, this->bufB,
+ //                                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 
@@ -2423,9 +2424,9 @@ DotcMetod<T>::run()
         type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                                         ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::dotc( type, this->size, this->bufA, 0,
-                                        this->bufX, 0, 1, this->bufY, 0, 1, this->bufB,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::dotc( type, this->size, this->bufA, 0,
+//                                        this->bufX, 0, 1, this->bufY, 0, 1, this->bufB,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
 //COPY
@@ -2465,8 +2466,8 @@ CopyMetod<T>::run()
                         ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT:
              TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)::clMath::clblas::copy(type, this->size, this->bufX, 0, 1, this->bufY, 0, 1,
-                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)::clMath::clblas::copy(type, this->size, this->bufX, 0, 1, this->bufY, 0, 1,
+ //                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2502,8 +2503,8 @@ template <typename T> cl_int
 AxpyMetod<T>::run()
 {
 
-    return (cl_int)::clMath::clblas::axpy(this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
-                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)::clMath::clblas::axpy(this->size, this->alpha, this->bufX, 0, 1, this->bufY, 0, 1,
+ //                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -2545,8 +2546,8 @@ RotgMetod<T>::run()
     type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                                         ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::rotg( type, this->bufX, 0, this->bufY, 0, this->bufA, 0, this->bufB, 0,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)clMath::clblas::rotg( type, this->bufX, 0, this->bufY, 0, this->bufA, 0, this->bufB, 0,
+ //                                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -2585,8 +2586,8 @@ RotmMetod<T>::run()
 
     type = ( typeid(T) == typeid(float))? TYPE_FLOAT: TYPE_DOUBLE;
 
-    return (cl_int)clMath::clblas::rotm( type, this->size, this->bufX, 0, 1, this->bufY, 0, 1, this->bufA, 0,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::rotm( type, this->size, this->bufX, 0, 1, this->bufY, 0, 1, this->bufA, 0,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 
@@ -2625,8 +2626,8 @@ RotmgMetod<T>::run()
 
     type = ( typeid(T) == typeid(float))? TYPE_FLOAT: TYPE_DOUBLE;
 
-    return (cl_int)clMath::clblas::rotmg( type, this->bufA, 0, this->bufB, 0, this->bufX, 0, this->bufY, 0,
-                                         this->bufC, 0, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::rotmg( type, this->bufA, 0, this->bufB, 0, this->bufX, 0, this->bufY, 0,
+//                                         this->bufC, 0, this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -2663,8 +2664,8 @@ RotMetod<T>::run()
       //                                                                  ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
 
-    return (cl_int)clMath::clblas::rot( this->size, this->bufX, 0, 1, this->bufY, 0, 1, this->alpha, this->beta,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)clMath::clblas::rot( this->size, this->bufX, 0, 1, this->bufY, 0, 1, this->alpha, this->beta,
+ //                                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -2700,9 +2701,9 @@ Nrm2Metod<T>::run()
         type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::nrm2(type, this->size, this->bufY, 0,
-                                        this->bufX, 0, 1, this->bufA,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::nrm2(type, this->size, this->bufY, 0,
+//                                        this->bufX, 0, 1, this->bufA,
+//                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 ///////////////////////////////////////////////////////
@@ -2740,9 +2741,9 @@ AsumMetod<T>::run()
         type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                                                         ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::asum( type, this->size, this->bufA, 0,
-                                        this->bufX, 0, 1, this->bufY,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+ //   return (cl_int)clMath::clblas::asum( type, this->size, this->bufA, 0,
+  //                                      this->bufX, 0, 1, this->bufY,
+  //                                      this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -2782,9 +2783,9 @@ iAmaxMetod<T>::run()
         type = ( typeid(T) == typeid(float))? TYPE_FLOAT:( typeid(T) == typeid(double))? TYPE_DOUBLE:
                                 ( typeid(T) == typeid(FloatComplex))? TYPE_COMPLEX_FLOAT: TYPE_COMPLEX_DOUBLE;
 
-    return (cl_int)clMath::clblas::iamax( type, this->size,
-                                        this->bufY, 0, this->bufX, 0, 1, this->bufA,
-                                        this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
+//    return (cl_int)clMath::clblas::iamax( type, this->size,
+ //                                       this->bufY, 0, this->bufX, 0, 1, this->bufA,
+ //                                       this->qnum, this->queues, this->inEventCount, this->inEvent, this->outEvent);
 }
 
 //////////////////////////////////////////////////////////////////////

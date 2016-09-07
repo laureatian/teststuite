@@ -192,6 +192,7 @@ endif()
 # Find the BLAS library
 # TODO: maybe this could be written using the FindBLAS module in the future
 if( BUILD_TEST )
+  find_package( ISAAC REQUIRED)
 	if(NOT CORR_TEST_WITH_ACML)
 	    if(APPLE)
 			find_library(BLAS_LIBRARIES Accelerate HINTS /System/Library/Frameworks/Accelerate.framework)

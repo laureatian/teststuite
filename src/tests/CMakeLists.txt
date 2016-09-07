@@ -36,52 +36,52 @@ set(SRC_CORR
     correctness/blas-lapack.c
     correctness/BlasBase-corr.cpp
     correctness/corr-gemm.cpp
-    correctness/corr-trmm.cpp
-    correctness/corr-trsm.cpp
+#    correctness/corr-trmm.cpp
+#    correctness/corr-trsm.cpp
     correctness/corr-gemv.cpp
-    correctness/corr-symv.cpp
-    correctness/corr-spmv.cpp
-    correctness/corr-syr2k.cpp
-    correctness/corr-syrk.cpp
-    correctness/corr-trmv.cpp
-    correctness/corr-tpmv.cpp
-    correctness/corr-trsv.cpp
-	correctness/corr-symm.cpp
+#    correctness/corr-symv.cpp
+#    correctness/corr-spmv.cpp
+#    correctness/corr-syr2k.cpp
+#    correctness/corr-syrk.cpp
+#    correctness/corr-trmv.cpp
+#    correctness/corr-tpmv.cpp
+#    correctness/corr-trsv.cpp
+#	correctness/corr-symm.cpp
 	correctness/corr-gemm2.cpp
-	correctness/corr-ger.cpp
-	correctness/corr-gerc.cpp
-    correctness/corr-her.cpp
-	correctness/corr-her2.cpp
-	correctness/corr-syr.cpp
-    correctness/corr-spr.cpp
-	correctness/corr-syr2.cpp
-	correctness/corr-hemv.cpp
-	correctness/corr-hpmv.cpp
-	correctness/corr-hemm.cpp
-	correctness/corr-herk.cpp
-    correctness/corr-tpsv.cpp
-    correctness/corr-hpr.cpp
-	correctness/corr-hpr2.cpp
-	correctness/corr-spr2.cpp
-	correctness/corr-gbmv.cpp
-    correctness/corr-hbmv.cpp
-	correctness/corr-tbmv.cpp
-    correctness/corr-tbsv.cpp
-    correctness/corr-sbmv.cpp
-    correctness/corr-her2k.cpp
-    correctness/corr-scal.cpp
-	correctness/corr-swap.cpp
-	correctness/corr-copy.cpp
-    correctness/corr-axpy.cpp
-	correctness/corr-dot.cpp
-    correctness/corr-dotc.cpp
-    correctness/corr-rotg.cpp
-    correctness/corr-rotm.cpp
-	correctness/corr-rot.cpp
-    correctness/corr-rotmg.cpp
-    correctness/corr-nrm2.cpp
-    correctness/corr-asum.cpp
-    correctness/corr-iamax.cpp
+#	correctness/corr-ger.cpp
+#	correctness/corr-gerc.cpp
+#    correctness/corr-her.cpp
+#	correctness/corr-her2.cpp
+#	correctness/corr-syr.cpp
+#    correctness/corr-spr.cpp
+#	correctness/corr-syr2.cpp
+#	correctness/corr-hemv.cpp
+#	correctness/corr-hpmv.cpp
+#	correctness/corr-hemm.cpp
+#	correctness/corr-herk.cpp
+#    correctness/corr-tpsv.cpp
+#    correctness/corr-hpr.cpp
+#	correctness/corr-hpr2.cpp
+#	correctness/corr-spr2.cpp
+#	correctness/corr-gbmv.cpp
+#    correctness/corr-hbmv.cpp
+#	correctness/corr-tbmv.cpp
+#    correctness/corr-tbsv.cpp
+#    correctness/corr-sbmv.cpp
+#    correctness/corr-her2k.cpp
+#    correctness/corr-scal.cpp
+#	correctness/corr-swap.cpp
+#	correctness/corr-copy.cpp
+#    correctness/corr-axpy.cpp
+#	correctness/corr-dot.cpp
+#    correctness/corr-dotc.cpp
+#    correctness/corr-rotg.cpp
+#    correctness/corr-rotm.cpp
+#	correctness/corr-rot.cpp
+#    correctness/corr-rotmg.cpp
+#    correctness/corr-nrm2.cpp
+#    correctness/corr-asum.cpp
+#    correctness/corr-iamax.cpp
     correctness/test-correctness.cpp
     correctness/tcase-filter.cpp
 )
@@ -94,50 +94,50 @@ set(SRC_PERF
     performance/perf-gemm.cpp
     performance/perf-gemm2.cpp
     performance/perf-gemv.cpp
-    performance/perf-syr2k.cpp
-    performance/perf-syrk.cpp
-    performance/perf-symv.cpp
-    performance/perf-spmv.cpp
-    performance/perf-trmm.cpp
-    performance/perf-trsm.cpp
-    performance/perf-trmv.cpp
-    performance/perf-tpmv.cpp
-    performance/perf-trsv.cpp
-    performance/perf-symm.cpp
-    performance/perf-ger.cpp
-    performance/perf-gerc.cpp
-    performance/perf-syr.cpp
-    performance/perf-spr.cpp
-	performance/perf-her.cpp
-	performance/perf-her2.cpp
-    performance/perf-syr2.cpp
-	performance/perf-hemm.cpp
-    performance/perf-hemv.cpp
-    performance/perf-hpmv.cpp
-    performance/perf-herk.cpp
-	performance/perf-tpsv.cpp
-    performance/perf-hpr.cpp
-	performance/perf-hpr2.cpp
-    performance/perf-spr2.cpp
-    performance/perf-sbmv.cpp
-    performance/perf-gbmv.cpp
-    performance/perf-hbmv.cpp
-    performance/perf-tbmv.cpp
-    performance/perf-tbsv.cpp
-    performance/perf-her2k.cpp
-    performance/perf-scal.cpp
-    performance/perf-swap.cpp
-	performance/perf-copy.cpp
-    performance/perf-axpy.cpp
-	performance/perf-dot.cpp
-    performance/perf-dotc.cpp
-    performance/perf-rotg.cpp
-    performance/perf-rotm.cpp
-	performance/perf-rot.cpp
-    performance/perf-rotmg.cpp
-    performance/perf-nrm2.cpp
-    performance/perf-asum.cpp
-    performance/perf-iamax.cpp
+#    performance/perf-syr2k.cpp
+#    performance/perf-syrk.cpp
+#    performance/perf-symv.cpp
+#    performance/perf-spmv.cpp
+#    performance/perf-trmm.cpp
+#    performance/perf-trsm.cpp
+#    performance/perf-trmv.cpp
+#    performance/perf-tpmv.cpp
+#    performance/perf-trsv.cpp
+#    performance/perf-symm.cpp
+#    performance/perf-ger.cpp
+#    performance/perf-gerc.cpp
+#    performance/perf-syr.cpp
+#    performance/perf-spr.cpp
+#	performance/perf-her.cpp
+#	performance/perf-her2.cpp
+#    performance/perf-syr2.cpp
+#	performance/perf-hemm.cpp
+#    performance/perf-hemv.cpp
+#    performance/perf-hpmv.cpp
+#    performance/perf-herk.cpp
+#	performance/perf-tpsv.cpp
+#    performance/perf-hpr.cpp
+#	performance/perf-hpr2.cpp
+#    performance/perf-spr2.cpp
+#    performance/perf-sbmv.cpp
+#    performance/perf-gbmv.cpp
+#    performance/perf-hbmv.cpp
+#    performance/perf-tbmv.cpp
+#    performance/perf-tbsv.cpp
+#    performance/perf-her2k.cpp
+#    performance/perf-scal.cpp
+#    performance/perf-swap.cpp
+#	performance/perf-copy.cpp
+#    performance/perf-axpy.cpp
+#	performance/perf-dot.cpp
+#    performance/perf-dotc.cpp
+#    performance/perf-rotg.cpp
+#    performance/perf-rotm.cpp
+#	performance/perf-rot.cpp
+#    performance/perf-rotmg.cpp
+#    performance/perf-nrm2.cpp
+#    performance/perf-asum.cpp
+#    performance/perf-iamax.cpp
 	performance/test-performance.cpp
 )
 
@@ -152,8 +152,8 @@ set(SRC_FUNC
 )
 
 set(TESTS_HEADERS
-    ${clBLAS_SOURCE_DIR}/clBLAS.h
-    ${clBLAS_SOURCE_DIR}/clBLAS-complex.h
+    #${clBLAS_SOURCE_DIR}/clBLAS.h
+    #${clBLAS_SOURCE_DIR}/clBLAS-complex.h
 	${clBLAS_SOURCE_DIR}/include/cltypes.h
 	${clBLAS_SOURCE_DIR}/include/defbool.h
     include/blas-internal.h
@@ -165,50 +165,50 @@ set(TESTS_HEADERS
     include/common.h
     include/BlasBase.h
     include/gemm.h
-    include/trmm.h
-    include/tpmv.h
-    include/trsm.h
+    #include/trmm.h
+    #include/tpmv.h
+    #include/trsm.h
     include/gemv.h
-    include/symv.h
-    include/spmv.h
-    include/syr2k.h
-    include/syrk.h
-    include/trmv.h
-    include/trsv.h
-	include/symm.h
-	include/ger.h
-    include/gerc.h
-    include/syr.h
-    include/spr.h
-    include/her.h
-	include/her2.h
-    include/syr2.h
-	include/hemv.h
-	include/hpmv.h
-	include/hemm.h
-	include/herk.h
-    include/tpsv.h
-    include/hpr.h
-	include/hpr2.h
-    include/spr2.h
-    include/gbmv.h
-    include/hbmv.h
-    include/tbmv.h
-    include/tbsv.h
+    #include/symv.h
+    #include/spmv.h
+    #include/syr2k.h
+    #include/syrk.h
+    #include/trmv.h
+    #include/trsv.h
+  #include/symm.h
+  #include/ger.h
+   # include/gerc.h
+   # include/syr.h
+   # include/spr.h
+   # include/her.h
+  #include/her2.h
+  #  include/syr2.h
+  #include/hemv.h
+  #include/hpmv.h
+  #include/hemm.h
+  #include/herk.h
+  #  include/tpsv.h
+  #  include/hpr.h
+  #include/hpr2.h
+  #  include/spr2.h
+  #  include/gbmv.h
+  #  include/hbmv.h
+  #  include/tbmv.h
+  #  include/tbsv.h
 	include/copy.h
-    include/sbmv.h
-    include/dot.h
-    include/dotc.h
-    include/her2k.h
-    include/scal.h
+  #  include/sbmv.h
+  #  include/dot.h
+  #  include/dotc.h
+  #  include/her2k.h
+  #  include/scal.h
 	include/swap.h
-    include/axpy.h
-    include/rotg.h
-    include/rotm.h
-	include/rot.h
-    include/asum.h
-    include/rotmg.h
-    include/nrm2.h
+  #  include/axpy.h
+  #  include/rotg.h
+  #  include/rotm.h
+  #include/rot.h
+  #  include/asum.h
+  #  include/rotmg.h
+  #  include/nrm2.h
     include/iamax.h
 	include/blas-math.h
     include/blas-random.h
@@ -286,6 +286,8 @@ else( )
 	set( runtime.library "${runtime.library}/${CMAKE_SHARED_LIBRARY_PREFIX}clBLAS${CMAKE_SHARED_LIBRARY_SUFFIX}" )
 endif( )
 
+set( runtime.library "${ISAAC_LIBRARY}" )
+
 # Find Google Test package
 include(gtest.cmake)
 
@@ -315,9 +317,9 @@ if( GTEST_FOUND )
 	    # gcc > 4.3.2 to support ACML.
 	    # If the runtime is being built by the project, use it, otherwise link to a runtime library specified in the install prefix
 	    if( BUILD_RUNTIME )
-		    target_link_libraries(test-correctness ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
-		    target_link_libraries(test-medium ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
-		    target_link_libraries(test-short ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
+        target_link_libraries(test-correctness ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
+        target_link_libraries(test-medium ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
+        target_link_libraries(test-short ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
 	    else( )
 		    target_link_libraries(test-correctness
 			    ${ACML_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${runtime.library})
@@ -353,13 +355,13 @@ if( GTEST_FOUND )
 
 	    if( BUILD_RUNTIME )
 			if( NETLIB_FOUND )
-				target_link_libraries(test-correctness ${Netlib_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
-				target_link_libraries(test-medium ${Netlib_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
-				target_link_libraries(test-short ${Netlib_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
+        target_link_libraries(test-correctness ${Netlib_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
+        target_link_libraries(test-medium ${Netlib_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
+        target_link_libraries(test-short ${Netlib_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
 			else( )
-				target_link_libraries(test-correctness ${BLAS_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
-				target_link_libraries(test-medium ${BLAS_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
-				target_link_libraries(test-short ${BLAS_LIBRARIES} ${GTEST_LIBRARIES} ${THREAD_LIBRARY} clBLAS)
+        target_link_libraries(test-correctness ${BLAS_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
+        target_link_libraries(test-medium ${BLAS_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
+        target_link_libraries(test-short ${BLAS_LIBRARIES} ${GTEST_LIBRARIES} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
 			endif( )
 		else( )
 			if( NETLIB_FOUND )
@@ -410,7 +412,7 @@ if( GTEST_FOUND )
 
 
 		if( BUILD_RUNTIME )
-			target_link_libraries(test-performance ${GTEST_LIBRARIES} ${TIME_LIBRARY} ${THREAD_LIBRARY} clBLAS)
+      target_link_libraries(test-performance ${GTEST_LIBRARIES} ${TIME_LIBRARY} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY})
 		else()
 			target_link_libraries( test-performance ${GTEST_LIBRARIES} ${TIME_LIBRARY} ${OPENCL_LIBRARIES} ${runtime.library} )
 		endif()
@@ -433,7 +435,7 @@ if( GTEST_FOUND )
 
     set_target_properties( test-functional PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/staging" )
 	if( BUILD_RUNTIME )
-		target_link_libraries(test-functional ${GTEST_LIBRARIES} ${TIME_LIBRARY} ${THREAD_LIBRARY} clBLAS )
+    target_link_libraries(test-functional ${GTEST_LIBRARIES} ${TIME_LIBRARY} ${OPENCL_LIBRARIES} ${THREAD_LIBRARY} ${ISAAC_LIBRARY} )
 	else()
 		target_link_libraries(test-functional ${GTEST_LIBRARIES} ${TIME_LIBRARY} ${THREAD_LIBRARY} ${OPENCL_LIBRARIES} ${runtime.library} )
 	endif()

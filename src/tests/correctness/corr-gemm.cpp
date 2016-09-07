@@ -213,7 +213,7 @@ TEST_P(GEMM, sgemm) {
     getParams(&params);
     gemmCorrectnessTest<cl_float>(&params);
 }
-
+/*
 TEST_P(GEMM, dgemm) {
     TestParams params;
 
@@ -234,3 +234,4 @@ TEST_P(GEMM, zgemm) {
     getParams(&params);
     gemmCorrectnessTest<DoubleComplex>(&params);
 }
+*/

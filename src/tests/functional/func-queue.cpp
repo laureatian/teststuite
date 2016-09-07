@@ -119,6 +119,7 @@ TEST(QUEUE, zgemm) {
     ec.testQueue();
 }
 //******************************************************//
+/*
 TEST(QUEUE, strmm) {
     MQueueClass<TrmmMetod<float> > ec;
     ec.testQueue();
@@ -140,7 +141,9 @@ TEST(QUEUE, ztrmm) {
     MQueueClass<TrmmMetod<DoubleComplex> > ec;
     ec.testQueue();
 }
+*/
 //******************************************************//
+/*
 TEST(QUEUE, strsm) {
     MQueueClass<TrsmMetod<float> > ec;
     ec.testQueue();
@@ -162,6 +165,7 @@ TEST(QUEUE, ztrsm) {
     MQueueClass<TrsmMetod<DoubleComplex> > ec;
     ec.testQueue();
 }
+*/
 //******************************************************//
 TEST(QUEUE, sgemv) {
     MQueueClass<GemvMetod<float> > ec;
@@ -196,6 +200,7 @@ TEST(QUEUE, dsymv) {
     ec.testQueue();
 }
 //******************************************************//
+/*
 TEST(QUEUE, ssyr2k) {
     MQueueClass<Syr2kMetod<float> > ec;
     ec.testQueue();
@@ -206,6 +211,7 @@ TEST(QUEUE, dsyr2k) {
     MQueueClass<Syr2kMetod<cl_double> > ec;
     ec.testQueue();
 }
+*/
 #endif  //DO_THEIRS
 
 //******************************************************

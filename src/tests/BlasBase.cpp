@@ -433,7 +433,7 @@ BlasBase::printEnvInfo(void)
     }
 
     cl_uint libMajor, libMinor, libPatch;
-    clblasGetVersion( &libMajor, &libMinor, &libPatch );
+   // clblasGetVersion( &libMajor, &libMinor, &libPatch );
 
     std::cout << std::endl << "Test environment:" << std::endl << std::endl;
 

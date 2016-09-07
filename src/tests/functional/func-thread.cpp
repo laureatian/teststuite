@@ -202,7 +202,7 @@ TEST(THREAD, zgemm) {
     MThreadClass<GemmMetod<DoubleComplex> > ec;
     ec.mthread();
 }
-
+/*
 TEST(THREAD, strmm) {
     MThreadClass<TrmmMetod<float> > ec;
     ec.mthread();
@@ -221,7 +221,9 @@ TEST(THREAD, ztrmm) {
     MThreadClass<TrmmMetod<DoubleComplex> > ec;
     ec.mthread();
 }
+*/
 //////////////////////////////////////////////////////////////
+/*
 TEST(THREAD, strsm) {
     MThreadClass<TrsmMetod<float> > ec;
     ec.mthread();
@@ -240,6 +242,7 @@ TEST(THREAD, ztrsm) {
     MThreadClass<TrsmMetod<DoubleComplex> > ec;
     ec.mthread();
 }
+*/
 //////////////////////////////////////////////////////////////
 TEST(THREAD, sgemv) {
     MThreadClass<GemvMetod<float> > ec;
@@ -277,6 +280,7 @@ TEST(THREAD, dsymv) {
     ec.mthread();
 }
 //******************************************************//
+/*
 TEST(THREAD, ssyr2k) {
     MThreadClass<Syr2kMetod<float> > ec;
     ec.mthread();
@@ -287,6 +291,7 @@ TEST(THREAD, dsyr2k) {
     MThreadClass<Syr2kMetod<cl_double> > ec;
     ec.mthread();
 }
+*/
 #endif //DO_THIERS
 
 #ifdef DO_TRMV

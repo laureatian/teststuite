@@ -363,7 +363,7 @@ public:
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+/*
     // TRMM wrappers
     static clblasStatus
     trmm(
@@ -2227,8 +2227,9 @@ static clblasStatus
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+*/
  }; // clblas class
+
 }   // namespace clMath
 
 #endif  // CLBLAS_WRAPPER_H_

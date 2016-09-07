@@ -108,12 +108,12 @@ clMath::clblas::gemv(
     cl_event *events)
 {
     clblasStatus ret;
-
+/*
     ret = clblasCgemv(order, transA, M, N, alpha, A, offA, lda, X,
                             offx, incx, beta, Y, offy, incy,
                             numCommandQueues, commandQueues,
                             numEventsInWaitList, eventWaitList, events);
-
+*/
     return ret;
 }
 
@@ -141,12 +141,12 @@ clMath::clblas::gemv(
     cl_event *events)
 {
     clblasStatus ret;
-
+/*
     ret = clblasZgemv(order, transA, M, N, alpha, A, offA, lda, X, offx,
                             incx, beta, Y, offy, incy, numCommandQueues,
                             commandQueues, numEventsInWaitList,
                             eventWaitList, events);
-
+*/
     return ret;
 }
 
@@ -174,12 +174,12 @@ clMath::clblas::symv(
     cl_event *events)
 {
     clblasStatus ret;
-
+/*
     ret =  clblasSsymv(order, uplo, N, alpha, A, offA, lda, X, offx,
                             incx, beta, Y, offy, incy, numCommandQueues,
                             commandQueues, numEventsInWaitList,
                             eventWaitList, events);
-
+*/
     return ret;
 }
 
@@ -206,12 +206,12 @@ clMath::clblas::symv(
     cl_event *events)
 {
     clblasStatus ret;
-
+/*
     ret = clblasDsymv(order, uplo, N, alpha, A, offA, lda, X, offx,
                             incx, beta, Y, offy, incy, numCommandQueues,
                             commandQueues, numEventsInWaitList,
                             eventWaitList, events);
-
+*/
     return ret;
 }
 
@@ -311,12 +311,12 @@ clMath::clblas::gemm(
     cl_event *events)
 {
     clblasStatus ret;
-
+/*
     ret = clblasCgemm(order, transA, transB, M, N, K, alpha, A, offA,
                             lda, B, offB, ldb, beta, C, offC, ldc,
                             numCommandQueues, commandQueues,
                             numEventsInWaitList, eventWaitList, events);
-
+*/
     return ret;
 }
 
@@ -346,12 +346,12 @@ clMath::clblas::gemm(
     cl_event *events)
 {
     clblasStatus ret;
-
+/*
     ret = clblasZgemm(order, transA, transB, M, N, K, alpha, A, offA,
                             lda, B, offB, ldb, beta, C, offC, ldc,
                             numCommandQueues, commandQueues,
                             numEventsInWaitList, eventWaitList, events);
-
+*/
     return ret;
 }
 
@@ -629,7 +629,7 @@ clMath::clblas::gemm2(
 
     return ret;
 }
-
+/*
 clblasStatus
 clMath::clblas::trmm(
     clblasOrder order,
@@ -3461,3 +3461,4 @@ clMath::clblas::nrm2(
             }
 
     }
+*/

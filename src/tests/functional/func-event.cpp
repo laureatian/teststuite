@@ -171,7 +171,9 @@ TEST(EVENT_OUT, zgemm) {
     EventClass<GemmMetod<DoubleComplex> > ec;
     ec.runOut();
 }
+
 //******************************************************//
+/*
 TEST(EVENT_OUT, strmm) {
     EventClass<TrmmMetod<float> > ec;
     ec.runOut();
@@ -193,7 +195,9 @@ TEST(EVENT_OUT, ztrmm) {
     EventClass<TrmmMetod<DoubleComplex> > ec;
     ec.runOut();
 }
+*/
 //******************************************************//
+/*
 TEST(EVENT_OUT, strsm) {
     EventClass<TrsmMetod<float> > ec;
     ec.runOut();
@@ -215,6 +219,7 @@ TEST(EVENT_OUT, ztrsm) {
     EventClass<TrsmMetod<DoubleComplex> > ec;
     ec.runOut();
 }
+*/
 //******************************************************//
 TEST(EVENT_OUT, sgemv) {
     EventClass<GemvMetod<float> > ec;
@@ -250,6 +255,7 @@ TEST(EVENT_OUT, dsymv) {
     ec.runOut();
 }
 //******************************************************//
+/*
 TEST(EVENT_OUT, ssyr2k) {
     EventClass<Syr2kMetod<float> > ec;
     ec.runOut();
@@ -260,6 +266,7 @@ TEST(EVENT_OUT, dsyr2k) {
     EventClass<Syr2kMetod<cl_double> > ec;
     ec.runOut();
 }
+*/
 //******************************************************//
 //******************************************************//
 TEST(EVENT_IN, sgemm) {
@@ -281,6 +288,7 @@ TEST(EVENT_IN, zgemm) {
     ec.runIn();
 }
 //******************************************************//
+/*
 TEST(EVENT_IN, strmm) {
     EventClass<TrmmMetod<float> > ec;
     ec.runIn();
@@ -299,7 +307,9 @@ TEST(EVENT_IN, ztrmm) {
     EventClass<TrmmMetod<DoubleComplex> > ec;
     ec.runIn();
 }
+*/
 //******************************************************//
+/*
 TEST(EVENT_IN, strsm) {
     EventClass<TrsmMetod<float> > ec;
     ec.runIn();
@@ -318,6 +328,7 @@ TEST(EVENT_IN, ztrsm) {
     EventClass<TrsmMetod<DoubleComplex> > ec;
     ec.runIn();
 }
+*/
 //******************************************************//
 TEST(EVENT_IN, sgemv) {
     EventClass<GemvMetod<float> > ec;
@@ -352,6 +363,7 @@ TEST(EVENT_IN, dsymv) {
     ec.runIn();
 }
 //******************************************************//
+/*
 TEST(EVENT_IN, ssyr2k) {
     EventClass<Syr2kMetod<float> > ec;
     ec.runIn();
@@ -362,6 +374,7 @@ TEST(EVENT_IN, dsyr2k) {
     EventClass<Syr2kMetod<cl_double> > ec;
     ec.runIn();
 }
+*/
 #endif
 
 #ifdef DO_TRMV
