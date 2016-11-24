@@ -1855,7 +1855,7 @@ static clblasStatus
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+*/
  static clblasStatus
     scal(
         bool is_css_zds,
@@ -1883,7 +1883,7 @@ static clblasStatus
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+/*
 
  static clblasStatus
     scal(
@@ -1930,7 +1930,7 @@ static clblasStatus
         const cl_event *eventWaitList,
         cl_event *events);
 
-
+*/
 //copy
     static clblasStatus
     copy(
@@ -1986,7 +1986,7 @@ static clblasStatus
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+/*
 //DOTC
 static clblasStatus
     dotc(
@@ -2006,7 +2006,7 @@ static clblasStatus
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+*/
  //axpy calls
  static clblasStatus
 	axpy(
@@ -2039,7 +2039,7 @@ static clblasStatus
         cl_uint numEventsInWaitList,
         const cl_event *eventWaitList,
         cl_event *events);
-
+/*
  static clblasStatus
 	axpy(
 		size_t N,

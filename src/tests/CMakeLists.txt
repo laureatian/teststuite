@@ -69,18 +69,18 @@ set(SRC_CORR
 #    correctness/corr-tbsv.cpp
 #    correctness/corr-sbmv.cpp
 #    correctness/corr-her2k.cpp
-#    correctness/corr-scal.cpp
+    correctness/corr-scal.cpp
 #	correctness/corr-swap.cpp
-#	correctness/corr-copy.cpp
-#    correctness/corr-axpy.cpp
-#	correctness/corr-dot.cpp
+    correctness/corr-copy.cpp
+    correctness/corr-axpy.cpp
+    correctness/corr-dot.cpp
 #    correctness/corr-dotc.cpp
 #    correctness/corr-rotg.cpp
 #    correctness/corr-rotm.cpp
 #	correctness/corr-rot.cpp
 #    correctness/corr-rotmg.cpp
 #    correctness/corr-nrm2.cpp
-#    correctness/corr-asum.cpp
+    correctness/corr-asum.cpp
 #    correctness/corr-iamax.cpp
     correctness/test-correctness.cpp
     correctness/tcase-filter.cpp
@@ -125,18 +125,18 @@ set(SRC_PERF
 #    performance/perf-tbmv.cpp
 #    performance/perf-tbsv.cpp
 #    performance/perf-her2k.cpp
-#    performance/perf-scal.cpp
+    performance/perf-scal.cpp
 #    performance/perf-swap.cpp
-#	performance/perf-copy.cpp
-#    performance/perf-axpy.cpp
-#	performance/perf-dot.cpp
+    performance/perf-copy.cpp
+    performance/perf-axpy.cpp
+    performance/perf-dot.cpp
 #    performance/perf-dotc.cpp
 #    performance/perf-rotg.cpp
 #    performance/perf-rotm.cpp
 #	performance/perf-rot.cpp
 #    performance/perf-rotmg.cpp
 #    performance/perf-nrm2.cpp
-#    performance/perf-asum.cpp
+    performance/perf-asum.cpp
 #    performance/perf-iamax.cpp
 	performance/test-performance.cpp
 )
@@ -197,12 +197,12 @@ set(TESTS_HEADERS
   #  include/tbsv.h
 	include/copy.h
   #  include/sbmv.h
-  #  include/dot.h
+    include/dot.h
   #  include/dotc.h
   #  include/her2k.h
-  #  include/scal.h
+    include/scal.h
 	include/swap.h
-  #  include/axpy.h
+    include/axpy.h
   #  include/rotg.h
   #  include/rotm.h
   #include/rot.h

@@ -2780,7 +2780,7 @@ clMath::clblas::swap(
 				return 	clblasInvalidValue;
 		}
 }
-
+*/
  clblasStatus
 clMath::clblas::copy(
 	DataType type,
@@ -2813,7 +2813,7 @@ clMath::clblas::copy(
                     offy, incy,
                     numCommandQueues, commandQueues, numEventsInWaitList,
                     eventWaitList, events);
-
+/*
             case TYPE_COMPLEX_FLOAT:
                 return clblasCcopy(
                     N, X, offx, incx, Y,
@@ -2827,7 +2827,7 @@ clMath::clblas::copy(
                     offy, incy,
                     numCommandQueues, commandQueues, numEventsInWaitList,
                     eventWaitList, events);
-
+*/
             default:
                 return  clblasInvalidValue;
         }
@@ -2872,7 +2872,7 @@ clMath::clblas::scal(
     return clblasDscal(N, alpha, X, offx, incx, numCommandQueues,
                         commandQueues, numEventsInWaitList, eventWaitList, events);
 }
-
+/*
 clblasStatus
 clMath::clblas::scal(
         bool is_css_zds,
@@ -2919,7 +2919,7 @@ clMath::clblas::scal(
                         commandQueues, numEventsInWaitList, eventWaitList, events);
     }
 }
-
+*/
 // DOT
 clblasStatus
 clMath::clblas::dot(
@@ -2954,7 +2954,7 @@ clMath::clblas::dot(
                                   offy, incy, scratchBuff,
                                   numCommandQueues,commandQueues, numEventsInWaitList,
                                   eventWaitList, events);
-
+/*
             case TYPE_COMPLEX_FLOAT:
             return clblasCdotu( N, dotProduct, offDP, X, offx, incx, Y,
                             offy, incy, scratchBuff,
@@ -2966,7 +2966,7 @@ clMath::clblas::dot(
                                   offy, incy, scratchBuff,
                                   numCommandQueues,commandQueues, numEventsInWaitList,
                                   eventWaitList, events);
-
+*/
             default:
                    return clblasInvalidValue;
             }
@@ -3004,7 +3004,7 @@ clMath::clblas::asum(
             return clblasDasum( N, asum, offAsum, X, offx, incx, scratchBuff,
                                   numCommandQueues,commandQueues, numEventsInWaitList,
                                   eventWaitList, events);
-
+/*
             case TYPE_COMPLEX_FLOAT:
             return clblasScasum( N, asum, offAsum, X, offx, incx, scratchBuff,
                             numCommandQueues,commandQueues, numEventsInWaitList,
@@ -3014,13 +3014,13 @@ clMath::clblas::asum(
             return clblasDzasum( N, asum, offAsum, X, offx, incx, scratchBuff,
                                   numCommandQueues,commandQueues, numEventsInWaitList,
                                   eventWaitList, events);
-
+*/
             default:
                    return clblasInvalidValue;
             }
 
     }
-
+/*
 //DOTC
 clblasStatus
 clMath::clblas::dotc(
@@ -3063,7 +3063,7 @@ clMath::clblas::dotc(
     }
 
 
-
+*/
 //axpy calls
 clblasStatus
 	clMath::clblas::axpy(
@@ -3105,7 +3105,7 @@ clblasStatus
     return clblasDaxpy(N, alpha, X, offBX, incx, Y, offCY, incy, numCommandQueues,
                         commandQueues, numEventsInWaitList, eventWaitList, events);
 }
-
+/*
 clblasStatus
 	clMath::clblas::axpy(
 		size_t N,

@@ -195,7 +195,7 @@ TEST_P(ASUM, dasum) {
     getParams(&params);
     asumCorrectnessTest<cl_double, cl_double>(&params);
 }
-
+/*
 TEST_P(ASUM, scasum) {
     TestParams params;
 
@@ -209,3 +209,4 @@ TEST_P(ASUM, dzasum) {
     getParams(&params);
     asumCorrectnessTest<DoubleComplex, cl_double>(&params);
 }
+*/

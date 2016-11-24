@@ -179,7 +179,7 @@ TEST_P(SCAL, dscal) {
     params.K = 0;                           // K will indicate wheather routine is csscal/zdscal
     scalCorrectnessTest<cl_double>(&params);
 }
-
+/*
 TEST_P(SCAL, cscal) {
     TestParams params;
 
@@ -213,3 +213,4 @@ TEST_P(SCAL, zdscal) {
     params.K = 1;                           // K will indicate wheather routine is csscal/zdscal
     scalCorrectnessTest<DoubleComplex>(&params);
 }
+*/

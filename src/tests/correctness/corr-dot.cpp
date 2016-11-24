@@ -200,7 +200,7 @@ TEST_P(DOT, ddot) {
     getParams(&params);
     dotCorrectnessTest<cl_double>(&params);
 }
-
+/*
 TEST_P(DOT, cdotu) {
     TestParams params;
 
@@ -214,3 +214,4 @@ TEST_P(DOT, zdotu) {
     getParams(&params);
     dotCorrectnessTest<DoubleComplex>(&params);
 }
+*/

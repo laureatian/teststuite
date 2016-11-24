@@ -196,7 +196,7 @@ TEST_P(AXPY, daxpy) {
     getParams(&params);
     axpyCorrectnessTest<cl_double>(&params);
 }
-
+/*
 TEST_P(AXPY, caxpy) {
     TestParams params;
 
@@ -210,3 +210,4 @@ TEST_P(AXPY, zaxpy) {
     getParams(&params);
     axpyCorrectnessTest<DoubleComplex>(&params);
 }
+*/
