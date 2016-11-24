@@ -971,6 +971,24 @@ clblasZcopy(
  *
  * @ingroup AXPY
  */
+
+clblasStatus
+clblasHaxpy(
+    size_t N,
+    cl_float alpha,
+    const cl_mem X,
+    size_t offx,
+    int incx,
+    cl_mem Y,
+    size_t offy,
+    int incy,
+    cl_uint numCommandQueues,
+    cl_command_queue *commandQueues,
+    cl_uint numEventsInWaitList,
+    const cl_event *eventWaitList,
+    cl_event *events);
+
+
 clblasStatus
 clblasSaxpy(
     size_t N,

@@ -152,6 +152,7 @@ set(SRC_FUNC
 )
 
 set(TESTS_HEADERS
+  ${clBLAS_SOURCE_DIR}/half.hpp
     #${clBLAS_SOURCE_DIR}/clBLAS.h
     #${clBLAS_SOURCE_DIR}/clBLAS-complex.h
 	${clBLAS_SOURCE_DIR}/include/cltypes.h

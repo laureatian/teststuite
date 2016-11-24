@@ -2008,6 +2008,22 @@ static clblasStatus
         cl_event *events);
 */
  //axpy calls
+static clblasStatus
+ haxpy(
+   size_t N,
+       cl_float alpha,
+   cl_mem X,
+   size_t offBX,
+   int incx,
+   cl_mem Y,
+   size_t offCY,
+   int incy,
+   cl_uint numCommandQueues,
+       cl_command_queue *commandQueues,
+       cl_uint numEventsInWaitList,
+       const cl_event *eventWaitList,
+       cl_event *events);
+
  static clblasStatus
 	axpy(
 		size_t N,

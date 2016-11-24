@@ -3065,6 +3065,27 @@ clMath::clblas::dotc(
 
 */
 //axpy calls
+
+clblasStatus
+  clMath::clblas::haxpy(
+    size_t N,
+        cl_float alpha,
+    cl_mem X,
+    size_t offBX,
+    int incx,
+    cl_mem Y,
+    size_t offCY,
+    int incy,
+    cl_uint numCommandQueues,
+        cl_command_queue *commandQueues,
+        cl_uint numEventsInWaitList,
+        const cl_event *eventWaitList,
+        cl_event *events)
+{
+    return clblasHaxpy(N, alpha, X, offBX, incx, Y, offCY, incy, numCommandQueues,
+                        commandQueues, numEventsInWaitList, eventWaitList, events);
+}
+
 clblasStatus
 	clMath::clblas::axpy(
 		size_t N,

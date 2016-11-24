@@ -27,7 +27,9 @@
 #include <BlasBase.h>
 #include <blas-random.h>
 #include <axpy.h>
+#include <half.hpp>
 
+typedef half_float::half fp16;
 static void
 releaseMemObjects(cl_mem objX,  cl_mem objY)
 {
@@ -181,7 +183,145 @@ axpyCorrectnessTest(TestParams *params)
     delete[] events;
 }
 
+void haxpyCorrectnessTest(TestParams *params)
+{
+    cl_int err;
+    float *X, *Y; //For OpenCL implementation
+    float *blasX, *blasY;// For reference implementation
+    fp16 *hX, *hY;
+    cl_mem bufX, bufY;
+    clMath::BlasBase *base;
+    cl_event *events;
+    float alpha;
+
+    base = clMath::BlasBase::getInstance();
+
+    printf("number of command queues : %d\n\n", params->numCommandQueues);
+
+    events = new cl_event[params->numCommandQueues];
+    memset(events, 0, params->numCommandQueues * sizeof(cl_event));
+
+    size_t lengthX = (1 + ((params->N -1) * abs(params->incx)));
+    size_t lengthY = (1 + ((params->N -1) * abs(params->incy)));
+
+    X 		= new float[lengthX + params->offBX ];
+    Y 		= new float[lengthY + params->offCY ];
+    blasX 	= new float[lengthX + params->offBX ];
+    blasY	= new float[lengthY + params->offCY ];
+    hX    = new fp16[lengthX + params->offBX];
+    hY    = new fp16[lengthY + params->offCY];
+
+    if((X == NULL) || (blasX == NULL) || (Y == NULL) || (blasY == NULL))
+    {
+      ::std::cerr << "Cannot allocate memory on host side\n" << "!!!!!!!!!!!!Test skipped.!!!!!!!!!!!!" << ::std::endl;
+        deleteBuffers<float>(X, Y, blasX, blasY);
+      delete[] events;
+      SUCCEED();
+      return;
+    }
+
+    srand(params->seed);
+
+    // Populate X and Y
+    randomVectors(params->N, (X+params->offBX), params->incx, (Y+params->offCY), params->incy);
+
+    memcpy(blasX, X, (lengthX + params->offBX) * sizeof(float));
+    memcpy(blasY, Y, (lengthY + params->offCY) * sizeof(float));
+    alpha = convertMultiplier<float>(params->alpha);
+    for(size_t i = 0; i < lengthX + params->offBX; ++i) {
+      hX[i] = fp16(X[i]);
+    }
+    for(size_t i = 0; i < lengthY + params->offCY; ++i) {
+      hY[i] = fp16(Y[i]);
+    }
+    std::cout << X[0] << std::endl;
+    std::cout << hX[0] << std::endl;
+    std::cout << float(hX[0]) << std::endl;
+
+  // Allocate buffers
+    bufX = base->createEnqueueBuffer(hX, (lengthX + params->offBX)* sizeof(fp16), 0, CL_MEM_READ_ONLY);
+    bufY = base->createEnqueueBuffer(hY, (lengthY + params->offCY)* sizeof(fp16), 0, CL_MEM_READ_WRITE);
+
+  if ((bufX == NULL) || (bufY == NULL)) {
+        /* Skip the test, the most probable reason is
+         *     matrix too big for a device.
+         */
+        releaseMemObjects(bufX, bufY);
+        deleteBuffers<float>(X, Y, blasX, blasY);
+        delete [] hX;
+        delete [] hY;
+        delete[] events;
+        ::std::cerr << ">> Failed to create/enqueue buffer for a matrix."
+            << ::std::endl
+            << ">> Can't execute the test, because data is not transfered to GPU."
+            << ::std::endl
+            << ">> Test skipped." << ::std::endl;
+        SUCCEED();
+        return;
+    }
+
+  ::clMath::blas::axpy((size_t)params->N, alpha, blasX, (size_t)params->offBX, params->incx,
+             blasY, (size_t)params->offCY, params->incy);
+
+    err = (cl_int)::clMath::clblas::haxpy(params->N, alpha, bufX, params->offBX, params->incx, bufY, params->offCY, params->incy,
+                      params->numCommandQueues, base->commandQueues(), 0, NULL, events);
+
+    if (err != CL_SUCCESS) {
+        releaseMemObjects(bufX, bufY);
+        deleteBuffers<float>(X, Y, blasX, blasY);
+        delete [] hX;
+        delete [] hY;
+        delete[] events;
+        ASSERT_EQ(CL_SUCCESS, err) << "::clMath::clblas::AXPY() failed";
+    }
+
+    err = waitForSuccessfulFinish(params->numCommandQueues,
+        base->commandQueues(), events);
+    if (err != CL_SUCCESS) {
+        releaseMemObjects(bufX, bufY);
+        deleteBuffers<float>(X, Y, blasX, blasY);
+        delete [] hX;
+        delete [] hY;
+        delete[] events;
+        ASSERT_EQ(CL_SUCCESS, err) << "waitForSuccessfulFinish()";
+    }
+
+    err = clEnqueueReadBuffer(base->commandQueues()[0], bufY, CL_TRUE, 0,
+        (lengthY + params->offCY) * sizeof(fp16), hY, 0, NULL, NULL);
+    std::cout << hY[0] << std::endl;
+  if (err != CL_SUCCESS)
+  {
+    ::std::cerr << "AXPY: Reading results failed...." << std::endl;
+  }
+
+    releaseMemObjects(bufX, bufY);
+
+    for(size_t i = 0; i < lengthY + params->offCY; ++i) {
+      Y[i] = float(hY[i]);
+    }
+
+    compareMatrices<float>(clblasRowMajor, lengthY , 1, (blasY + params->offCY), (Y + params->offCY), 1);
+
+    if (::testing::Test::HasFailure())
+    {
+        printTestParams(params->N, params->alpha, params->offBX, params->incx, params->offCY, params->incy);
+        ::std::cerr << "queues = " << params->numCommandQueues << ::std::endl;
+    }
+
+    deleteBuffers<float>(X, Y, blasX, blasY);
+    delete [] hX;
+    delete [] hY;
+    delete[] events;
+}
+
 // Instantiate the test
+
+TEST_P(AXPY, haxpy) {
+    TestParams params;
+
+    getParams(&params);
+    haxpyCorrectnessTest(&params);
+}
 
 TEST_P(AXPY, saxpy) {
     TestParams params;
